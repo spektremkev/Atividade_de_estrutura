@@ -3,14 +3,13 @@
 
 typedef struct{
     char name[30];
-    int code, class;
+    int code, clas;
     float avOne, avTwo, rate;
 }Student;
 
-
-void main(){
+int main(){
     Student student[MAX];
-    int v, class;
+    int v, clas;
     float rateMax;
 
     for(v=0; v<=MAX; v++){
@@ -19,7 +18,7 @@ void main(){
         printf("Nome: ");
         scanf("%s", &student[v].name[30]);
         printf("Turma: ");
-        scanf("%d", &student[v].class);
+        scanf("%d", &student[v].clas);
         printf("Nota 1: ");
         scanf("%f", &student[v].avOne);
         printf("Nota 2: ");
@@ -29,17 +28,17 @@ void main(){
 
         if(student[v].rate > rateMax){
             rateMax = student[v].rate;
-            class = student[v].class;
+            clas = student[v].clas;
         }
         printf("\n");
     }
-    system('clear');
+    //system();
 
     for(v=0; v<=MAX; v++){
         printf("Codigo: %d\n", student[v].code);
         printf("Nome: %s\n", student[v].name);
-        printf("Turma: %d\n", student[v].class);
+        printf("Turma: %d\n", student[v].clas);
         printf("Media: %2.f\n", student[v].rate);
     }
-    printf("A maior media eh da Turma %d com a media %2.f\n", class, rateMax);
+    printf("A maior media eh da Turma %d com a media %2.f\n", clas, rateMax);
 }
